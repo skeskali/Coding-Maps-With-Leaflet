@@ -12,11 +12,11 @@ Save the file. You can give it any name you want, as long as it ends with the **
 ## Setting up Leaflet
 To make the web map work, we need to add a link to the [Leaflet CSS ](https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css)file to the ```<head>``` section of the page. This will load a lot of predefined CSS classes and elements to your HTML page.
 
-````<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />````
+`<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />`
 
 Your page should look like this:
 
-![HTML Step 2 - add Leaflet CSS](images/HTML02.png "HTML Sample 02")
+![HTML Step 2 - add Leaflet CSS](/images/HTML02.png "HTML Sample 02")
 
 Next, add a link to the [Leaflet JavaScript file](http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js "Leaflet JavaScript library") to the ```<head>``` of your document, like this:
 
@@ -46,7 +46,7 @@ We’ll be making a map of Vancouver, BC using OpenStreetMap. Add this code insi
 Your HTML should look like this.
 
 
-![Coding Maps with Leaflet - Step 4 - Add style declaration](images/HTML04.png)
+![Coding Maps with Leaflet - Step 4 - Add style declaration](/images/HTML04.png)
 
 
 If you’ve come this far, give yourself a pat on the back! Next, we’ll add some map tiles.
