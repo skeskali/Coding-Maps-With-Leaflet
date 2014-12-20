@@ -1,7 +1,7 @@
 # Coding Maps with Leaflet
 ## Introduction
 ### What is a Web Map?
-Fundamentally, a web map lives on the World Wide Web. This means you can embed it/serve it as an HTML page. 
+A web map lives on the World Wide Web. This means you can embed it/serve it as an HTML page. 
 
 A web map is made up of many small, square images called tiles. The tiles are usually 256 x 256 pixels in size, and are placed side-by-side to create the illusion of a large, seamless image. 
 
