@@ -28,7 +28,7 @@ Your document should look like this:
 
 Lastly, we need to add some of our own CSS to make the map as large or as small as we want.
 
-Set the `margin` and `padding` on the document to ```0```. Next, create a declaration for the ID `#map`, and set the `height` to `800px`.
+Set the `margin` and `padding` on the document to `0`. Next, create a declaration for the ID `#map`, and set the `height` to `800px`.
 
 ## Add the map to your page
 Next we’ll add a `div` element on the page where we want our map to appear.
@@ -41,12 +41,30 @@ Next, add another `<script>` tag to your page, immediately following the closing
 
 We’ll be making a map of Vancouver, BC using OpenStreetMap. Add this code inside the `<script>` tag:
 
-`var map = L.map('map').setView([49.288, -123.125], 16);`
+`var map = L.map('map').setView([49.2787, -123.1102], 16);`
+
+This function sets the default view for your map using the location's latitude and longitude, and sets the map's zoom level. 
 
 Your HTML should look like this.
 
 
-![Coding Maps with Leaflet - Step 4 - Add style declaration](/images/HTML04.png)
+![Coding Maps with Leaflet - Step 5 - Add geolocation](images/HTML05.png)
 
+## Adding map tiles
+And now the fun begins - now we get to add some map tiles so that you can see your map in your web browser. 
+
+Add the following code inside the `<script>` tag in your HTML document: 
+
+`L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);`
+
+This looks a little complicated, so let me break it down for you. 
+
+Essentially, this code tells Leaflet to go to OpenStreetMap, pull up some tiles from their library that match the coordinates we called in the map function, and add those tiles to the HTML page.
+
+Open your HTML file in your web browser. You should see a map that looks like this:
+
+![Map of Vancouver BC](images/HTML06.png) 
 
 If you’ve come this far, give yourself a pat on the back! Next, we’ll add some map tiles.
