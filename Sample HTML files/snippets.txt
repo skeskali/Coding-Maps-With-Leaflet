@@ -1,0 +1,52 @@
+/* This document contains the example code snippets for Coding Maps with Leaflet, organized by each step.
+*
+* Copy and paste the code from this file into your HTML file. 
+*/
+
+=====================================================================
+STEP 1: Add the Leaflet CSS to your HTML Page
+=====================================================================
+
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+
+=====================================================================
+STEP 2: Add the Leaflet JS to your HTML Page
+=====================================================================
+
+ <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+=====================================================================
+STEP 3: Add custom CSS to your HTML Page
+=====================================================================
+
+<style type="text/css">
+    body {
+        padding: 0;
+        margin: 0;
+    }  
+    html, body, #map {
+        height: 100%;
+    }
+  </style>
+  
+  
+=====================================================================
+STEP 4: Initialize the map  with coordinates and zoom level
+=====================================================================
+
+ var map = L.map('map').setView([49.2791, -123.1146], 16);
+ 
+=====================================================================
+STEP 5: Add a tile layer to your page
+=====================================================================
+
+ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' 
+        }).addTo(map);
+ 
+ =====================================================================
+STEP 6: Add a marker to your page
+=====================================================================
+
+var marker = L.marker([49.27970, -123.11549]).addTo(map);
+        marker.bindPopup("Vancouver Public Library is the third-largest library system in Canada."); 
