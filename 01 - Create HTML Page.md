@@ -1,7 +1,7 @@
 # Coding Maps with Leaflet
 ## Create Your HTML Page
 
-Open your text editor. For this course, I’ll be using [Brackets](http://brackets.io "Brackets Text Editor"), but you can use whatever text editor you want. A couple of good, multi-platform ones are [Atom](http://atom.io "Atom text editor") and [Sublime Text](http://sublimetext.com "Sublime Text").
+Open your text editor. For this course, I’ll be using [Coda](http://panic.com/coda "Coda IDE"), but you can use whatever text editor you want. A couple of good, multi-platform ones are [Atom](http://atom.io "Atom text editor"), [Brackets](http://brackets.io "Brackets text editor") and [Sublime Text](http://sublimetext.com "Sublime Text").
 
 Create a new file with this basic structure:
 
@@ -20,15 +20,15 @@ Your page should look like this:
 
 Next, add a link to the [Leaflet JavaScript file](http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js "Leaflet JavaScript library") to the ```<head>``` of your document, like this:
 
-`<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>`
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 
 Your document should look like this:
 
 ![Coding Maps with Leaflet - Step 3 - Add Leaflet js](images/HTML03.png "Coding Maps with Leaflet - Step 3")
 
-Lastly, we need to add some of our own CSS to make the map as large or as small as we want.
+Lastly, we need to add some of our own CSS to make the map fill the entire page. 
 
-Set the `margin` and `padding` on the document to `0`. Next, create a declaration for the ID `#map`, and set the `height` to `800px`.
+Set the `margin` and `padding` on the document to `0`. Next, create a declaration for the ID the tags html and body, and the ID `#map`, and set the `height` to `100%`.
 
 ## Add the map to your page
 Next we’ll add a `div` element on the page where we want our map to appear.
@@ -43,12 +43,13 @@ We’ll be making a map of Vancouver, BC using OpenStreetMap. Add this code insi
 
     var map = L.map('map').setView([49.2791, -123.1146], 16);
 
-This function sets the default view for your map using the location's latitude and longitude, and sets the map's zoom level.
+This function initializes the map, sets the default view for your map using the location's latitude and longitude, and sets the map's zoom level.
 
-Your HTML should look like this.
+If you're feeling lost, you can see the final HTML file on Github in the Sample HTML Files directory.
 
 
-![Coding Maps with Leaflet - Step 5 - Add geolocation](images/HTML05.png)
+![add geocoding and zoom map to full page](images/HTML06.png)
+
 
 ## Adding map tiles
 And now the fun begins - now we get to add some map tiles so that you can see your map in your web browser.
