@@ -10,7 +10,7 @@ The latitude/longitude for Vancouver Public Library’s Central Branch is `[49.2
 
 Add this code inside the `<script>` tag: 
 
-    var marker = L.marker([49.27970, -123.11549]).addTo(map);
+    var marker = L.marker([49.27970, -123.11562]).addTo(map);
 
 
 Reload your HTML page in the browser, and you should see a blue pin on top of Vancouver Public Library. The pin won’t do anything if you click on it, so our next step is to create a popup (or tool tip) that shows some information about the library. The ability to add these popups is built into Leaflet, so creating them will be easy. 
