@@ -1,7 +1,7 @@
 # Coding Maps with Leaflet
 ## Create Your HTML Page
 
-Open your text editor. For this course, I’ll be using [Coda](http://panic.com/coda "Coda IDE"), but you can use whatever text editor you want. A couple of good, multi-platform ones are [Atom](http://atom.io "Atom text editor"), [Brackets](http://brackets.io "Brackets text editor") and [Sublime Text](http://sublimetext.com "Sublime Text").
+Open your text editor. A couple of good, multi-platform ones are [Atom](http://atom.io "Atom text editor"), [Brackets](http://brackets.io "Brackets text editor") and [Sublime Text](http://sublimetext.com "Sublime Text").
 
 Create a new file with this basic structure:
 
