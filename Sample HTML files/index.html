@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Coding Maps with Leaflet</title>
   <meta name="author" content="Cecily Walker">
+
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   <style type="text/css">
@@ -15,33 +16,49 @@
     html, body, #map {
         height: 100%;
     }
+     .leaflet-popup-content-wrapper {
+        background: #F1EEE8;
+        color: #000;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    
+    .leaflet-popup-content-wrapper a {
+        color: #2B82CB;
+    }
+    
+
   </style>
 </head>
 
 <body>
     <div id="map"></div>
     <script> 
-        var map = L.map('map').setView([49.2791, -123.1146], 16);
+        var map = L.map('map').setView([49.27970, -123.11562], 16);
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' 
         }).addTo(map);
-        var marker = L.marker([49.27970, -123.11549]).addTo(map);
         
-        marker.bindPopup("<b>Vancouver Public Library</b> is the third-largest library system in Canada.");
+        var marker = L.marker([49.27970, -123.11562]).addTo(map);
         
-        L.circle([49.27788, -123.1082], 100, {
+        marker.bindPopup("<b><a href='http://www.vpl.ca'>Vancouver Public Library</a></b> is the third-largest library system in Canada.");
+        
+        L.circle([49.27793265, -123.108757781274], 70, {
             color: 'blue',
             fillColor: 'green',
             fillOpacity: 0.5
         }).addTo(map).bindPopup("<b>Rogers Arena</b> is the home of the Vancouver Canucks");
         
+        
         var popup = L.popup();
+        
         function onMapClick(e) {
             popup
             .setLatLng(e.latlng)
             .setContent("You clicked the map at " + e.latlng.toString())
             .openOn(map);
         }
+        
         
         map.on('click', onMapClick);
     </script>

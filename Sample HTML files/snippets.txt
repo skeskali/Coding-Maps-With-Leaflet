@@ -3,20 +3,38 @@
 * Copy and paste the code from this file into your HTML file. 
 */
 
+/* Add links to Leaflet CSS and JavaScript to the HEAD of your HTML file. 
+Add JavaScript functions between the <script></script> tags in your HTML file. */
+
 =====================================================================
-STEP 1: Add the Leaflet CSS to your HTML Page
+MAPPING WITH LEAFLET
+=====================================================================
+
+=====================================================================
+latitude/longitude of Vancouver Public Library
+=====================================================================
+ 
+[49.27970, -123.11562]
+
+
+=====================================================================
+STEP 1: Add the Leaflet CSS to head of your HTML Page
 =====================================================================
 
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 
+
+
 =====================================================================
-STEP 2: Add the Leaflet JS to your HTML Page
+STEP 2: Add the Leaflet JS to head of your HTML Page
 =====================================================================
 
  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+ 
+ 
 
 =====================================================================
-STEP 3: Add custom CSS to your HTML Page
+STEP 3: Add custom CSS to head of your HTML Page
 =====================================================================
 
 <style type="text/css">
@@ -28,25 +46,111 @@ STEP 3: Add custom CSS to your HTML Page
         height: 100%;
     }
   </style>
-  
+ 
+ 
+ 
   
 =====================================================================
 STEP 4: Initialize the map  with coordinates and zoom level
 =====================================================================
 
  var map = L.map('map').setView([49.2791, -123.1146], 16);
+
+
  
 =====================================================================
-STEP 5: Add a tile layer to your page
+STEP 5: Add a tile layer using OpenStreetMap tiles to your page
 =====================================================================
 
  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' 
         }).addTo(map);
+
+
  
- =====================================================================
-STEP 6: Add a marker to your page
+=====================================================================
+STEP 6: Add a marker to your map
 =====================================================================
 
-var marker = L.marker([49.27970, -123.11549]).addTo(map);
-        marker.bindPopup("Vancouver Public Library is the third-largest library system in Canada."); 
+var marker = L.marker([49.27970, -123.11562]).addTo(map);
+        
+        marker.bindPopup("<b><a href='http://www.vpl.ca'>Vancouver Public Library</a></b> is the third-largest library system in Canada.");
+   
+   
+   
+=====================================================================
+STEP 7: Style your pop-up - add to style declaration in HEAD of page
+=====================================================================
+
+.leaflet-popup-content-wrapper {
+        background: #F1EEE8;
+        color: #000;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    
+.leaflet-popup-content-wrapper a {
+        color: #2B82CB;
+    }
+
+
+
+=====================================================================
+STEP 8: Show latitude/longitude on click event
+=====================================================================
+
+var popup = L.popup();
+        
+        function onMapClick(e) {
+            popup
+            .setLatLng(e.latlng)
+            .setContent("You clicked the map at " + e.latlng.toString())
+            .openOn(map);
+        }
+        
+        
+        map.on('click', onMapClick);
+        
+
+
+=====================================================================
+MAPPING USING THE MAPBOX EDITOR
+=====================================================================
+
+
+=====================================================================
+Description of Vancouver Public Library for Editor
+=====================================================================
+
+Vancouver Public Library (VPL) is the public library system for the city of Vancouver, British Columbia. In 2013, VPL had more than 6.9 million visits with patrons borrowing nearly 9.5 million items including: books, ebooks, CDs, DVDs and magazines. Across 22 locations and online, VPL serves nearly 428,000 active members and is the third-largest public library system in Canada.
+
+
+
+=====================================================================
+MAPPING WITH MAPBOX - USING A TEXT EDITOR
+=====================================================================
+
+=====================================================================
+STEP 9: Add Mapbox JS, CSS and viewport to head of your HTML document
+=====================================================================
+
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
+
+
+
+=====================================================================
+Initialize Mapbox Map 
+=====================================================================
+
+
+<script>
+L.mapbox.accessToken = 'pk.eyJ1Ijoic2tlc2thbGkiLCJhIjoicmhyZGNiYyJ9.qZ9U6KHBtGBjxsf4qNAVpA';
+var map = L.mapbox.map('map', 'your.mapboxid')
+    .setView([40, -74.50], 9);
+</script>
+
+
+
